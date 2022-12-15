@@ -1,18 +1,17 @@
 const express = require('express')
 const router = express.Router()
-const bcrypt = require('bcrypt')
 const Validator = require('fastest-validator')
-const {Project, User} = require('../../../models')
+const {Project} = require('../../../models')
 
 const v = new Validator()
 
 //Create Project
-router.post('/project', async(req, res)=> {
+router.post('/project', async (req, res) => {
     const schema = {
         name_project: 'string|empty:false',
         data_type: 'string|empty:false',
         id_user: 'string|empty:false',
-        bst_operation:'string'
+        bst_operation: 'string'
     }
 
     const validate = v.validate(req.body, schema)
