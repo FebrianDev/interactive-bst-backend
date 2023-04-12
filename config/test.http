@@ -1,0 +1,40 @@
+### Register User
+POST http://localhost:6060/api/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "F26",
+  "email": "f26@gmail.com",
+  "password": "123456"
+}
+
+### Login User
+POST http://localhost:6060/api/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "f26@gmail.com",
+  "password": "123456"
+}
+
+### Create Project
+POST http://localhost:6060/api/project
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name_project": "ProjectTest",
+  "data_type": "Int",
+  "id_user": "1",
+  "bst_operation":""
+}
+
+### Get Project
+GET http://localhost:6060/api/project/1
+Content-Type: application/json
+
+### Get Project By Id
+GET http://localhost:6060/api/project/id/1
+Content-Type: application/json

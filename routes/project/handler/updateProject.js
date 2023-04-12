@@ -18,11 +18,13 @@ router.put("/project/id/:id", async (req, res) => {
     console.log(project)
 
     if (project[0] === 1) {
+        console.log("Success")
         return res.json({
             status: "success save data operation bst",
             code: 200,
         })
     } else {
+        console.log("Error")
         return res.json({
             status: "failed! id not found",
             code: 404,

@@ -22,7 +22,12 @@ app.use(cors({
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/api', registerUser, loginUser, createProject, getAllProject, updateProject, getProjectById)
+app.use('/api',
+    /*Auth*/
+    registerUser, loginUser,
+    /*Project*/
+    createProject, getAllProject, updateProject, getProjectById,
+)
 
 module.exports = app
 
