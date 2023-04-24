@@ -5,10 +5,12 @@ const multer = require('multer')
 const upload = multer()
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
-const path = require("path");
-const {registerUser, loginUser} = require("./routes/auth/auth")
+const path = require("path")
+const {registerUser, loginUser, getUser} = require("./routes/auth/auth")
+const {addScore, getScore} = require("./routes/quiz/quiz")
 const cors = require('cors')
 const {createProject, getAllProject, updateProject, getProjectById} = require("./routes/project/project")
+const {add} = require("nodemon/lib/rules");
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -24,9 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api',
     /*Auth*/
-    registerUser, loginUser,
+    registerUser, loginUser, getUser,
     /*Project*/
     createProject, getAllProject, updateProject, getProjectById,
+    /*Quiz*/
+    addScore, getScore
 )
 
 module.exports = app
