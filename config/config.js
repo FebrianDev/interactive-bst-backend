@@ -13,20 +13,23 @@ module.exports =
             "password": DB_PASSWORD,
             "database": DB_NAME,
             "host": DB_HOSTNAME,
-            "dialect": "mysql"
+            "dialect": "mysql",
+            "dialectModule": "mysql2",
         },
         "test": {
             "username": DB_USERNAME,
             "password": DB_PASSWORD,
             "database": DB_NAME,
             "host": DB_HOSTNAME,
-            "dialect": "mysql"
+            "dialect": "mysql",
+            "dialectModule": "mysql2",
         },
         "production": {
             "username": DB_USERNAME,
             "password": DB_PASSWORD,
             "database": DB_NAME,
             "host": DB_HOSTNAME,
-            "dialect": "mysql"
+            "dialect": "mysql",
+            "dialectModule": "mysql2",
         }
     }
