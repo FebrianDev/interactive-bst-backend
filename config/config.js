@@ -28,6 +28,5 @@ module.exports =
             "database": DB_NAME,
             "host": DB_HOSTNAME,
             "dialect": "mysql",
-            "dialectModule": "mysql2",
         }
     }
