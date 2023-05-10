@@ -9,7 +9,8 @@ router.get("/quiz/:id_user", async (req, res) => {
     const quiz = await Quiz.findAll({
         where: {
             id_user:idUser
-        }
+        },
+        order:[['createdAt', 'DESC']]
     })
 
     if (quiz !== null) {
