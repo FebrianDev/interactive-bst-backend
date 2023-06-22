@@ -29,17 +29,17 @@ router.post('/login', async (req, res) => {
     })
 
     if (!user) {
-        return res.status(404).json({
+        return res.json({
             status: 'error',
-            message: 'user not found'
+            message: 'Incorrect Email or Password'
         })
     }
 
     const isValidPassword = await bcrypt.compare(req.body.password, user.password)
     if (!isValidPassword) {
-        return res.status(404).json({
+        return res.json({
             status: 'error',
-            message: 'user not found'
+            message: 'Incorrect Email or Password'
         })
     }
 
